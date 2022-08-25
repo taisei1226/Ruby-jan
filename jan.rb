@@ -26,15 +26,15 @@ def janken
 		case number
 		when 0 then
 			puts "あいこ・・・"
-			next_game = true
+			return true
 		when -1, 2 then
 			puts"あっち向いて・・"
-			acchimuite_hoi  #エラー
 			@janken_judge = "win"
+			return false
 		when 1, -2 then
 			puts "あっち向いて・・・"
-			acchimuite_hoi  #エラー
 			@janken_judge = "lose"
+			return false
 		end
 	end
 end
@@ -57,13 +57,20 @@ def attimuite_hoi
 		puts "負けました"
 		exit
 	else
-		next_game = true  #  じゃんけんに戻りたい
+		janken  #  じゃんけんに戻りたい
 	end
 end
+
 
 next_game = true
 
 while next_game do
 	next_game = janken
 end
+until next_game do
+	next_game = attimuite_hoi
+end
+
+
+
 
