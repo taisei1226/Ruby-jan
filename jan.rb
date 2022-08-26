@@ -30,16 +30,14 @@ def janken
 		when -1, 2 then
 			puts"あっち向いて・・"
 			@janken_judge = "win"
-			return false
+
 		when 1, -2 then
 			puts "あっち向いて・・・"
 			@janken_judge = "lose"
-			return false
+
 		end
 	end
-end
 
-def attimuite_hoi
 	puts "0(上)1(下)2(左)3(右)"
 	
 	player_number = gets.to_i
@@ -52,24 +50,24 @@ def attimuite_hoi
 	
 	if @janken_judge == "win" && player_number == program_number
 		puts "勝ちました"
-		exit
+		return false
 	elsif @janken_judge == "lose" && player_number == program_number
 		puts "負けました"
-		exit
+		return false
 	else
-		janken  #  じゃんけんに戻りたい
+	return true
 	end
 end
 
 
 next_game = true
 
-while next_game do
+loop {
 	next_game = janken
+	if next_game = false
+	break
 end
-until next_game do
-	next_game = attimuite_hoi
-end
+}
 
 
 
