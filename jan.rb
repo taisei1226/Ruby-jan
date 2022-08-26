@@ -64,7 +64,7 @@ next_game = true
 
 loop {
 	next_game = janken
-	if next_game = false
+	if next_game == false
 	break
 end
 }
